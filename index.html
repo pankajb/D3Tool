@@ -1,11 +1,62 @@
 <!DOCTYPE html>
 <html>
+<head>
+<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+<script src="pageLayout.js"> </script>
+</head>
+
 <body>
 
+	<form>
+		Select chart type:
+			<select id="myList" onchange="chartSelect()">
+			  <option></option>
+			  <option>Bar Chart</option>
+			  <option>Pie Chart</option>
+			</select>
+		<p>Your have selected: <input type="text" id="chart" size="20"></p>
+	</form>
 
-X-Axis : <input type="text" name="FirstName" value="Values for X-axis"><br>
-y-Axis : <input type="text" name="LastName" value="Values for Y-axis"><br>
+	<form id="x_form">
+		Select scale for X Axis:
+			<select id="x_scale" onchange="x_scaleSelect()">
+			  <option></option>
+			  <option>Linear</option>
+			  <option>Ordinal</option>
+			</select>
+			
+			<select id="x_scale_orientation" onchange="x_scaleOrientationSelect()">
+			  <option></option>
+			  <option>Top</option>
+			  <option>Bottom</option>
+			  <option>Right</option>
+			  <option>Left</option>
+			</select>
+			
+			Enter Input Length : <input type="number" id="x_length" min="0" placeholder="Pick a number" onchange="get_xLength()"><br>
+	
+	</form>
 
+	<form>
+		Select scale for Y Axis:
+			<select id="y_scale" onchange="y_scaleSelect()">
+			  <option></option>
+			  <option>Linear</option>
+			  <option>Ordinal</option>
+			</select>
+			
+			<select id="y_scale_orientation" onchange="y_scaleOrientationSelect()">
+			  <option></option>
+			  <option>Top</option>
+			  <option>Bottom</option>
+			  <option>Right</option>
+			  <option>Left</option>
+			</select>
+			
+			Enter Input Length : <input type="number" id="y_length"  min="0" placeholder="Pick a number" onchange="get_yLength()"><br>
+
+	</form>
 
 </body>
+
 </html>
