@@ -2,7 +2,11 @@
 <html>
 <head>
 <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
-<script src="pageLayout.js"> </script>
+<script src="pageLayout.js"></script>
+
+<link rel="stylesheet" type="text/css" href="stylesheet.css">
+
+
 </head>
 
 <body>
@@ -33,11 +37,13 @@
 			  <option>Left</option>
 			</select>
 			
-			Enter Input Length : <input type="number" id="x_length" min="0" placeholder="Pick a number" onchange="get_xLength()"><br>
-	
+			Enter Input Length : <input type="number" id="x_length" min="0" placeholder="Pick a number"><br>
+			Create Input boxes : <input type="button" placeholder="Pick a number" onclick="create_xLength()"><br>
+			Remove Input boxes : <input type="button" placeholder="Pick a number" onclick="remove_dataBoxes_xAxis()"><br>
+			Submit Input boxes : <input type="button" placeholder="Pick a number" onclick="submit_x()"><br>
 	</form>
 
-	<form>
+	<form id="y_form">
 		Select scale for Y Axis:
 			<select id="y_scale" onchange="y_scaleSelect()">
 			  <option></option>
@@ -53,9 +59,14 @@
 			  <option>Left</option>
 			</select>
 			
-			Enter Input Length : <input type="number" id="y_length"  min="0" placeholder="Pick a number" onchange="get_yLength()"><br>
+			Enter Input Length : <input type="number" id="y_length"  min="0" placeholder="Pick a number"><br>
+			Create Input boxes : <input type="button" placeholder="Pick a number" onclick="create_yLength()"><br>
+			Remove Input boxes : <input type="button" placeholder="Pick a number" onclick="remove_dataBoxes_yAxis()"><br>
 
 	</form>
+
+	<div class="chart"></div>
+
 
 </body>
 

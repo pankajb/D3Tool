@@ -1,4 +1,19 @@
-var margin = {top: 130, right: 20, bottom: 30, left: 40},	
+var data = [4, 8, 15, 16, 23, 42];
+
+var x = d3.scale.linear()
+    .domain([0, d3.max(data)])
+    .range([0, 420]);
+
+d3.select(".chart")
+  .selectAll("div")
+    .data(data)
+  .enter().append("div")
+    .style("width", function(d) { return x(d) + "px"; })
+    .text(function(d) { return d; });
+	
+/*	
+	
+	var margin = {top: 130, right: 20, bottom: 30, left: 40},	
 				width = 700 - margin.left - margin.right,					// SVG Width
 				height = 300 - margin.top - margin.bottom;					// SVG Height
 
